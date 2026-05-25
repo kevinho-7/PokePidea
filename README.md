@@ -1,4 +1,4 @@
-# PokePedia 🐾
+# PokePedia
 
 > Academic project developed for the **Web Front-end Development II** course at BYU–Idaho as part of my Software Development degree program.
 
