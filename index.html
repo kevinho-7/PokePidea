@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+    <html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/favicon.ico">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Jersey+25&display=swap" rel="stylesheet">
+        <meta property="og:title" content="PokePidea">
+        <meta property="og:description" content="An academic project to show programming proficiencies">
+        <meta property="og:image" content="https://pokepidea.netlify.app/assets/ultraball-logo-BtvVyBww.png">
+        <meta property="og:url" content="https://pokepidea.netlify.app/">
+        <meta property="og:type" content="website">
+        <script type="module" src="/src/scripts/main.js" defer></script>
+        <title>PokePedia | HOME</title>
+    </head>
+    <body class="d-flex flex-column min-vh-100">
+        <header class="navbar sticky-top navbar-expand-lg bg-color1">
+            <nav class="navbar navbar-expand-lg bg-color1 w-100">
+                <div class="container-fluid">
+
+                    <a class="navbar-brand" href="/">
+                        <img src="/public/images/PokePidea.png" alt="Logo" class="logo d-inline-block align-text-top img-fluid w-50">
+                        <span class="fw-bolder"></span>
+                    </a>
+
+                    <button class="navbar-toggler position-absolute top-0 end-0 mt-4 me-3 border border-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                        <ul class="navbar-nav fs-4 fw-bolder text-center">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="/">PokeDex</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/pages/pokebox.html">Box</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <div class="container mt-5" id="principal-container">
+                
+                <div class="navbar bg-body-black change-850">
+                    <div id="div-searchPokeGen" class="container-fluid justify-content-evenly">
+
+                        <form id="searchForm" class="d-flex" role="search" action="/" method="get">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search" required/>
+                            <button id="btnSearchPokemon" class="btn btn-outline-danger" type="submit">Search</button>
+                        </form>
+                        
+                        <div id="gen-list" class="btn-group dropend" style="font-size: 2rem;">
+                            <button type="button" class="btn btn-secondary btn-lg dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: #dc0a2d;">
+                                Generation
+                            </button>
+                            <ul id="ul-gen-list" class="dropdown-menu">
+
+                            </ul>
+                        </div>
+
+                        <div id="spinner" class="d-flex align-items-center text-danger d-none" style="gap: 10px; font-size: 1.5rem; font-family: Bungee, sans-serif;">
+                            <strong role="status">Loading...</strong>
+                            <div class="spinner-border ms-auto" aria-hidden="true"></div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="modalContainer modal fade" id="errorModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel"></h1>
+                            </div>
+                            <div class="modal-body text-center">
+                                <p class="modalMsg" style="font-size: 1.5rem;"></p>
+                                <p class="modalMsg2" style="font-size: 1.2rem;"></p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary btn-danger" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="d-flex justify-content-center mt-5">
+                    <div id="welcomeMsg" class="card text-bg-dark">
+                        <img src="/public/images/pikachuHero.jpg" class="card-img img-fluid" alt="pikachu Hero image">
+                         <div class="card-img-overlay">
+                            <h5 class="card-title fs-1 fst-italic text-decoration-underline fw-bold" style="color: #2A2828;">Welcome to PokePedia!</h5>
+                            <p class="card-text fs-2 fw-normal ps-3 border border-danger bg-danger rounded-4" style="--bs-bg-opacity: .5;">Choose a generation to open the Pokédex!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <section id="poke-section">
+                    <template class="poke-card-template" data-filled="false">
+                            <div id="poke-card" class="poke-card-name card p-4" style="width: 18rem;">
+                                <img src="" alt="" class="card-img-top" id="pokemon-img">
+                                <div class="card-body d-flex flex-column">
+                                    <p class="card-text text-center" id="poke-name" data-name=""></p>
+                                    <p class="card-text text-center" id="poke-type"></p>
+                                    <button id="btnCatch" type="button" class="btnCatch btn btn-danger" style="font-size: 1.5rem;">Catch!</button>
+                                </div>
+                            </div>
+                    </template>
+                </section>
+
+            </div>
+        </main>
+
+        <footer class="w-100 p-3 mt-auto">
+
+            <div class="container">
+                <div id="gridFooterContainer" class="row">
+
+                    <div class="grid-col col d-flex justify-content-center align-items-center">
+                        <p class="text-center" style="font-size: 1rem;">Developed for the Web Front-end Development II course at BYU–Idaho.</p>
+                    </div>
+
+                    <div class="grid-col col d-flex justify-content-center align-items-center">
+                        <p class="text-center" style="font-size: 1rem;">&copy; 2025 PokePidea. Developed by Kevin. All rights reserved.</p>
+                    </div>
+
+                    <div class="grid-col col d-flex justify-content-center align-items-center">
+                        <p class="text-right" style="font-size: 1rem;">Kevin G. Ferreira</p>
+                    </div>
+
+                </div>
+            </div>
+
+        </footer>
+    </body>
+</html>

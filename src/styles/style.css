@@ -1,0 +1,80 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+:root{
+    /* COLOR SCHEMA */
+    --color1: #DC0A2D;
+    --color2: #A9122B;
+    --color3: #F55973;
+    --color4: #2A2828;
+    --color5: #FFFFFF;
+
+    /* FONTS */
+    --title-font: "Bungee", sans-serif;
+    --text-fonte: "Jersey 25", sans-serif;
+}
+
+/* GENERAL CLASSES */
+.bg-color1{
+    background-color: var(--color1);
+}
+
+body{
+    background-color: var(--color4);
+    font-family: var(--text-fonte);
+}
+
+.mt-content-pokebox{
+    margin-top: 100px;
+}
+
+
+footer{
+    background-color: var(--color1);
+}
+
+.hidden{
+    display: none;
+}
+
+/* HEADER */
+a.nav-link{
+    font-family: var(--title-font);
+}
+
+#ul-gen-list li:hover{
+    background-color: #dee4ed;
+    cursor: pointer;
+}
+
+.yeahBro{
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* INDEX MAIN */
+
+#poke-section, #box-poke-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px; 
+  justify-items: center; 
+  align-items: start; 
+  padding: 20px;
+}
+
+div.card-body{
+    font-size: 1.5rem;
+}
+
+
+/* MEDIA QUERIES */
+/* @media (max-width: 992px) {
+   .responsive-image-logo {
+        width: 500px;
+        display:  flex;
+        justify-content: center;
+        align-items: center;
+
+   }
+} */
