@@ -1,5 +1,7 @@
 # PokePedia
 
+<img src="https://flagcdn.com/64x48/br.png" width="25"> [**`Portuguese Version`**](./README.pt.md)
+
 > Academic project developed for the **Web Front-end Development II** course at BYU–Idaho as part of my Software Development degree program.
 
 PokePedia is an interactive Pokédex web application that allows users to explore Pokémon by generation, search for specific Pokémon, and build their own personal "PokéBox" by catching and storing favorite Pokémon using browser local storage.
